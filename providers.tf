@@ -10,4 +10,11 @@ terraform {
       version = "~> 5.0"
     }
   }
+  # backend "s3" {
+  #   bucket = "noela-assessment-for-"
+  #   key = "assessment/terraform.tfstate"
+  #   profile = "noela-assessment"
+  #   region = "us-east-1"
+  #   dynamo_table = "noela-assessment-tf-state-lock"
+  # }
 }

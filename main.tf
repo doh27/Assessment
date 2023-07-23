@@ -76,6 +76,13 @@ module "private_sg" {
       protocol    = "tcp"
       cidr_blocks = formatlist("%s/32", module.public_ec2.ec2_attributes["public_ip"])
     },
+    "ssh_from_public_subnet" = {
+      description = "Allow SSH connection with Public subnets"
+      from_port   = 22
+      to_port     = 22
+      protocol    = "tcp"
+      cidr_blocks = ["10.0.0.0/28"]
+    },
     "same_sg" = {
       description = "Allow SSH connection with Private subnets"
       from_port   = 22
